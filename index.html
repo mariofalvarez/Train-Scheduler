@@ -1,17 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Train Scheduler</title>
-</head>
-<body>
-	<!-- Firebase SDK -->
-	<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
-	<!-- jquery -->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<!-- Javascript -->
-	<script src="./assets/javascript/app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <title>Train Scheduler</title>
+  </head>
+
+  <body>
+    <!-- Headline Container -->
+    <div class="container-headline">
+      <h1 class="big-headline">Choo Choo!</h1>
+      <h2 class="small-headline">
+        Track your train schedule with ease in real-time.
+      </h2>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container-fluid sticky-fix">
+      <div class="row">
+        <!-- Add Train Container -->
+        <div class="container-add col-xs-12 col-sm-6 col-md-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Make a Train</h3>
+            </div>
+            <div class="panel-body">
+              <form id="target">
+                <div class="form-group">
+                  <label for="train-input">Train Name</label>
+                  <input
+                    type="text"
+                    id="train-input"
+                    class="form-control"
+                    placeholder="What is your train called?"
+                    pattern="[a-zA-Z0-9\s]{3,25}"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="destination-input">Destination</label>
+                  <input
+                    type="text"
+                    id="destination-input"
+                    class="form-control"
+                    placeholder="Where would you like to go?"
+                    pattern="[a-zA-Z\s]{3,25}"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="frequency-input">Frequency (min)</label>
+                  <input
+                    type="text"
+                    id="frequency-input"
+                    class="form-control"
+                    placeholder="How often does your train depart?"
+                    pattern="[0-9]{2}"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="time-input"
+                    >First Train Time of the Day (HH:mm)</label
+                  >
+                  <input
+                    type="text"
+                    id="time-input"
+                    class="form-control"
+                    placeholder="Enter in military time, eg. 16:00"
+                    pattern="[0-9:]{5}"
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  id="add-train-btn"
+                  class="btn btn-success"
+                >
+                  Add Train
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Train Schedule Container -->
+        <div class="container-sched col-xs-12 col-sm-6 col-md-8">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Train Schedule</h3>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover" id="train-table">
+                <thead>
+                  <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency (min)</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+    </div>
+    <!--  -->
+
+    <!-- Important Links -->
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Moment JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+    <!-- Javascript -->
+    <script src="./assets/javascript/app.js"></script>
+  </body>
 </html>

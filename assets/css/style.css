@@ -1,0 +1,74 @@
+body {
+  background-image: url("../img/train-background.jpg");
+  background-size: cover;
+}
+
+/* Headline settings */
+.container-headline {
+  margin-bottom: 50px;
+  height: 200px;
+}
+
+.big-headline {
+  font-family: 'Calibri', sans-serif;
+  font-size: 10vw;
+  text-align: left;
+  margin: 0px;
+  padding-left: 20px;
+  color: white;
+  text-shadow: 5px 5px black;
+}
+
+.small-headline {
+  font-family: 'Calibri', sans-serif;
+  text-align: left;
+  text-decoration: underline;
+  margin-bottom: 30px;
+  padding-left: 50px;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+/* Main settings */
+.sticky-fix {
+  padding-bottom: 85px;
+}
+
+h3 {
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+/* Add Train settings */
+.container-add {
+  background-color: rgba(128, 128, 128, 0.500);
+  padding: 10px;
+  border-top-left-radius: 5%;
+  border-bottom-left-radius: 5%;
+  text-decoration: underline white;
+  text-shadow: 2px 2px black;
+}
+
+label {
+  color: white;
+  font-weight: bold;
+}
+
+/* Train Schedule settings */
+.container-sched {
+  background-color: rgba(128, 128, 128, 0.500);
+  padding: 10px;
+  border-top-right-radius: 5%;
+  border-bottom-right-radius: 5%;
+  text-shadow: 2px 2px black;
+}
+
+thead {
+  color: white;
+  font-weight: bold;
+}
+
+td {
+  color: white;
+  font-weight: bold;
+}
